@@ -63,8 +63,6 @@ public class JournalEntry {
     }
     
     boolean equals(JournalEntry je) {
-        Log.println(Log.INFO,"huh", "1: "+ Integer.toString(je.getId()));
-        Log.println(Log.INFO, "huh", "2: "+ Integer.toString(this.id));
         return (je.getId() == this.id);
     }
 }

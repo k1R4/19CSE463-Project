@@ -90,13 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected synchronized void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(resultCode == RESULT_CANCELED) return;
+
         super.onActivityResult(requestCode, resultCode, data);
 
         boolean update = data.getBooleanExtra("update", false);
-        Log.println(Log.INFO, "idk", "hohohohohohohohohohoh");
-        Log.println(Log.INFO, "idk", "Result: "+Integer.toString(resultCode));
-        Log.println(Log.INFO, "idk", "Request: "+Integer.toString(requestCode));
-        Log.println(Log.INFO, "idk", "Update: "+ Boolean.toString(update));
 
         if (resultCode == RESULT_OK) {
             if(update) {

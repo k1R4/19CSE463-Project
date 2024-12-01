@@ -37,8 +37,6 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.JournalV
         Context context = holder.itemView.getContext();
         holder.timestamp.setText(entry.getTimestamp());
 
-        Log.println(Log.INFO, "SHTTSSHNTSNH", "STHSNHSNHSNHS");
-
         holder.content.post(() -> {
             if (holder.content.getLineCount() > 6) {
                 int lineEndIndex = holder.content.getLayout().getLineEnd(5);
@@ -48,7 +46,6 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.JournalV
         });
 
         holder.itemView.setOnClickListener(v -> {
-            Log.println(Log.INFO, "HEHHEHEE", "HAHAHAHHAHAHA");
             Intent intent = new Intent(context, ViewEntryActivity.class);
             intent.putExtra("entryId", entry.getId());
             main.startActivityForResult(intent, 200);
